@@ -6,3 +6,15 @@ document.getElementById("botonEliminarPos").addEventListener("click", eliminarPr
 
 });
 
+function añadirProducto() {
+    let nuevoElemento = document.getElementById("contenidoAñadir").value.trim();
+
+    if(nuevoElemento!=""){
+        let nuevoElementoLi = document.createElement("li");
+        nuevoElementoLi.textContent = nuevoElemento;
+        document.getElementById("lista").appendChild(nuevoElementoLi);
+        document.getElementById("contenidoAñadir").value = ""; 
+    }
+    alert("Se ha modificado la lista, añadido elemento: " + nuevoElemento); 
+}
+
