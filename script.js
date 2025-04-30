@@ -26,3 +26,13 @@ function eliminarProducto() {
     alert("Se ha modificado la lista, eliminado elemento: " + ultimoElemento.textContent); 
     }
     
+    function eliminarProductoPorPosicion(){
+    
+        let lista = document.getElementById("lista");
+        let posicion = parseInt(document.getElementById("contenidoEliminarPos").value.trim());
+       
+        if (posicion >= 1 || posicion <= lista.children.length) {
+        lista.removeChild(lista.children[posicion-1]);
+        alert("Se ha modificado la lista, eliminado elemento en la posición deseada");
+    
+     }}
