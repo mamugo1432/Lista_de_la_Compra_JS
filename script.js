@@ -18,3 +18,11 @@ function añadirProducto() {
     alert("Se ha modificado la lista, añadido elemento: " + nuevoElemento); 
 }
 
+function eliminarProducto() {
+
+    let lista = document.getElementById("lista");
+    let ultimoElemento = lista.lastElementChild;
+    lista.removeChild(ultimoElemento); 
+    alert("Se ha modificado la lista, eliminado elemento: " + ultimoElemento.textContent); 
+    }
+    
