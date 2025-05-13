@@ -13,9 +13,18 @@ function añadirProducto() {
         let nuevoElementoLi = document.createElement("li");
         nuevoElementoLi.textContent = nuevoElemento;
         document.getElementById("lista").appendChild(nuevoElementoLi);
-        document.getElementById("contenidoAñadir").value = ""; 
+        let input = document.getElementById("contenidoAñadir");
+        input.value = ""; 
+
+        let parrafo = document.createElement("p");
+        let body= document.getElementsByTagName("body")[0];
+        parrafo.textContent = "Se ha añadido un nuevo elemento";
+        body.appendChild(parrafo);
+    /*alert("Se ha añadido un elemento a la lista" ); */
     }
-    alert("Se ha modificado la lista, añadido elemento: " + nuevoElemento); 
+
+    
+    
 }
 
 function eliminarProducto() {
@@ -23,7 +32,11 @@ function eliminarProducto() {
     let lista = document.getElementById("lista");
     let ultimoElemento = lista.lastElementChild;
     lista.removeChild(ultimoElemento); 
-    alert("Se ha modificado la lista, eliminado elemento: " + ultimoElemento.textContent); 
+    /*alert("Se ha modificado la lista, eliminado elemento: " + ultimoElemento.textContent); */
+    let parrafo = document.createElement("p");
+        let body= document.getElementsByTagName("body")[0];
+        parrafo.textContent = "Se ha eliminado el último elemento";
+        body.appendChild(parrafo);
     }
     
     function eliminarProductoPorPosicion(){
@@ -33,6 +46,12 @@ function eliminarProducto() {
        
         if (posicion >= 1 || posicion <= lista.children.length) {
         lista.removeChild(lista.children[posicion-1]);
-        alert("Se ha modificado la lista, eliminado elemento en la posición deseada");
+
+        let parrafo = document.createElement("p");
+        let body= document.getElementsByTagName("body")[0];
+        parrafo.textContent = "Se ha eliminado el elemento en la posición "+ (posicion);
+        body.appendChild(parrafo);
+        /*alert("Se ha modificado la lista, eliminado elemento en la posición deseada");*/
+
     
      }}
